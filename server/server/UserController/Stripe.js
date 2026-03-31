@@ -36,7 +36,7 @@ exports.user= async (req, res) => {
             metadata: {
                 order_description: description || "No description provided"
             },
-            success_url: 'http://localhost:5173/success?session_id={CHECKOUT_SESSION_ID}',
+            success_url: 'http://localhost:5173/dashboard',
             cancel_url: 'http://localhost:5173/cancel',
         });
         res.json({ 

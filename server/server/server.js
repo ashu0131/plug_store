@@ -14,7 +14,6 @@ app.use(
 app.use(express.json());
 app.use(router);
 const port = process.env.PORT || 5000;
-app.listen(port, () => {console.log(`Stripe server listening on port ${port}`)
+app.listen(port, () => {console.log(`Stripe server listening on port http://localhost:${port}`)
  
 });
-

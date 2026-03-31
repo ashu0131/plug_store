@@ -13,10 +13,11 @@ function Cart() {
     (acc, item) => acc + item.price * item.quantity,
     0
   );
+   const API_URL = import.meta.env.VITE_GET_URI;
 
   const paymentCheckout = async () => {
     try {
-      const res = await fetch("http://localhost:5300/create-checkout-session", {
+      const res = await fetch(`${API_URL}/create-checkout-session`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
