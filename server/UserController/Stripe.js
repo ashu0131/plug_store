@@ -36,8 +36,8 @@ exports.user= async (req, res) => {
             metadata: {
                 order_description: description || "No description provided"
             },
-            success_url: 'http://localhost:5173/dashboard',
-            cancel_url: 'http://localhost:5173/cancel',
+            success_url: 'https://plug-store-09in.netlify.app/dashboard',
+            cancel_url: 'https://plug-store-09in.netlify.app/dashboard',
         });
         res.json({ 
             status: "success", 
