@@ -9,5 +9,17 @@
     "nodemailer": "^8.0.3",
     "strip": "^3.0.0",
     "stripe": "^20.4.1"
-  }
+  },
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
