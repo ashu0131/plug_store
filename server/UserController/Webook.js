@@ -1,7 +1,7 @@
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 require("dotenv").config();
 const nodemailer = require("../UserController/sendmail");
-const Order = require("../config/schema"); 
+const Order = require("../config/schema");
 
 exports.webhook = async (req, res) => {
   const sig = req.headers["stripe-signature"];
@@ -25,8 +25,7 @@ exports.webhook = async (req, res) => {
       console.log("Session ID:", session.id);
       console.log("Customer Email:", session.customer_email);
       console.log(" transection id:", session.transection_id)
-      
-      
+
           await Order.create({
           sessionId: session.id,
           email: session.customer_email,
@@ -36,8 +35,8 @@ exports.webhook = async (req, res) => {
 
   console.log("💾 Order saved to DB");
 
-      await  nodemailer(  
-        process.env.EMAIL_USER, 
+      await  nodemailer(
+        process.env.EMAIL_SEND,
         "💰 New Payment Received",
         `Payment Successful!
            Amount: ₹${session.amount_total / 100}
@@ -55,4 +54,6 @@ exports.webhook = async (req, res) => {
   }
 
   res.status(200).json({ received: true });
-};
+ };
+ 
+

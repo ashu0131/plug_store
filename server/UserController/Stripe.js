@@ -17,7 +17,7 @@ exports.user= async (req, res) => {
         }
         const session = await stripe.checkout.sessions.create({
             payment_method_types: ['card'],
-            customer_email: customerEmail, 
+            customer_email: customer_Email, 
             line_items: [
                 {
                     price_data: {
@@ -68,7 +68,4 @@ exports.ashu=async (req, res) => {
         res.status(500).json({ error: err.message });
     }
 };
-
-
-
 
